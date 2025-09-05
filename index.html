@@ -60,15 +60,7 @@
       font-style: italic;
       color: #666;
     }
-    .confetti {
-      position: fixed;
-      width: 10px;
-      height: 10px;
-      background: red;
-      top: -10px;
-      animation: fall 4s linear forwards;
-      opacity: 0.8;
-    }
+    
     @keyframes fall {
       to {
         transform: translateY(110vh) rotate(720deg);
@@ -83,16 +75,14 @@
     <p id="message">Rizqi's turns 25 — Udah tua jan sakit sakit, kan mesti rajin kerja biar cepet sukses. 🎂</p>
     
     <div>
-      <button onclick="greet()">Greetings</button>
-      <button onclick="addBalloon()">Tambah Balon</button>
-      <button onclick="fromMe()">Dari Aku</button>
-      <button onclick="addConfetti()">Confetti 🎊</button>
-      <button onclick="playSong()">Putar Lagu</button>
+      <button id="greet()">Greetings</button>
+      <button id="addBalloon()">Tambah Balon</button>
+      <button id="fromMe()">Dari Aku</button>
+      <button id="playSong()">Putar Lagu</button>
     </div>
 
-    <p style="margin-top:1rem; font-size:0.9rem; color:#555;">
-      Tip: Tambah query di URL, contoh:<br>
-      ?to=Rizqi&msg=Selamat%20ulang%20tahun%20Rizqi!
+    <p style="margin-top:1rem; font-size:0.9rem; color:#51230ceb;">
+     
     </p>
   </div>
 
@@ -125,17 +115,6 @@
       }
     }
 
-    function addConfetti() {
-      for (let i = 0; i < 50; i++) {
-        const conf = document.createElement("div");
-        conf.className = "confetti";
-        conf.style.left = Math.random() * window.innerWidth + "px";
-        conf.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-        conf.style.animationDuration = (2 + Math.random() * 3) + "s";
-        document.body.appendChild(conf);
-        setTimeout(() => conf.remove(), 4000);
-      }
-    }
 
     function playSong() {
       const song = document.getElementById("song");
